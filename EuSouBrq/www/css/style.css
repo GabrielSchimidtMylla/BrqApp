@@ -1,0 +1,16 @@
+.bg-login
+{
+    background-image: url('../img/bg-brq.jpg'); 
+    background-repeat: no-repeat;
+}
+.container-login
+{
+    position: fixed;
+    background: #f5f5f5;
+    margin-left: 19%;
+    top: 12em;
+    width: 20em;
+    height: 20em;
+    opacity: .8;
+    border-radius: 6px;
+}
