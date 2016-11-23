@@ -1,4 +1,32 @@
 .bg-login
 {
-    background-color: #1e242c;
+    background-image: url("../img/bg-brq.jpg");
+}
+
+.container-login
+{
+    padding-top: 25%;
+}
+.img-logo
+{
+    width: 55%;
+    padding-bottom: 10%;
+}
+.input-login
+{
+    background-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    color: #fff;
+}
+
+.input-login input
+{
+    color:#fff;
+}
+
+.esqueci-senha
+{
+    color:#fff;
+    padding-top: 10%;
 }
