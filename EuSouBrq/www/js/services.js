@@ -3,7 +3,8 @@
     "use strict";
 
     angular.module("brqApp")
-        .service("usuarioService", UsuarioService);
+        .service("usuarioService", UsuarioService)
+        .service("publicacaoService", PublicacaoService);
 
     UsuarioService.$inject = ["$http", "$q", "locationConst", "applicationConst"];
 
@@ -33,6 +34,19 @@
         self.sair = function() {
             window.localStorage.removeItem(applicationConst.storageUser);
         };
+
+        return self;
+    }
+
+    PublicacaoService.$inject = ["$http", "$q", "locationConst"];
+
+    function PublicacaoService($http, $q, locationConst)
+    {
+        var self = this;
+
+        self.listar = function() {
+            return $http.get(locationConst.posts)
+        }
 
         return self;
     }

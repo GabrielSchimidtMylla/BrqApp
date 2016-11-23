@@ -73,10 +73,24 @@
         }
     }
 
-    HomeController.$inject = [];
+    HomeController.$inject = ["publicacaoService", "$state"];
 
-    function HomeController() {
+    function HomeController(publicacaoService, $state) {
         var vm = this;
+        vm.loading = true;
+        vm.dados = [];
+        
+        setTimeout(function(){
+        publicacaoService.listar()
+                         .then(function(data){
+                            vm.dados = data.data;
+                         }).catch(function(error){
+                             console.log(error);
+                            navigator.notification.alert("Falha ao sincronizar! Verifique sua conexão com a internet.",function(){});
+                         }).finally(function(){
+                            vm.loading = false;
+                         });
+        },2000);
     }
 
     PontoController.$inject = [];

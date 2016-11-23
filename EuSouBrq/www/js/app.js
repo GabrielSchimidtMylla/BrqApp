@@ -14,7 +14,8 @@ angular.module('brqApp', ['ionic'])
     }
   });
 }).constant("locationConst",{
-  "login": "http://private-88aa2-apieusoubrq.apiary-mock.com/autenticar"
+  "login": "http://private-88aa2-apieusoubrq.apiary-mock.com/autenticar",
+  "posts": "http://private-88aa2-apieusoubrq.apiary-mock.com/publicacao"
 }).constant("applicationConst",{
   "storageUser": "_OAuthBRQ"
 });

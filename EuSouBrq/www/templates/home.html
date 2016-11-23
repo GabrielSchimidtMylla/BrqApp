@@ -1,8 +1,33 @@
-<ion-view title="Noticias">
+<ion-view title="Notícias">
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
-    <ion-content class="has-header">
-        <h3>Home</h3>
+    <ion-content class="has-header animated fadeInLeft">
+        <div class="row">
+            <div class="col-10 col-offset-50">
+                <ion-spinner ng-show="vm.loading" icon="ripple"></ion-spinner>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="list" ng-repeat="item in vm.dados track by $index">
+                    <div class="card animated bounceInLeft">
+                        <div class="item item-avatar">
+                            <img ng-src="{{item.avatar}}">
+                            <h2>{{item.autor}}</h2>
+                            <p>{{item.data}}</p>
+                        </div>
+                        <div class="item item-body">
+                            <img class="full-image" ng-src="{{item.image}}">
+                            <p>{{item.titulo}}</p>
+                            <p>
+                                <a href="#" class="subdued">1 Gostei</a>
+                                <a href="#" class="subdued">5 Comentários</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>
