@@ -13,4 +13,10 @@ angular.module('brqApp', ['ionic'])
       StatusBar.styleDefault();
     }
   });
+}).constant("locationConst",{
+  "login": "http://private-88aa2-apieusoubrq.apiary-mock.com/autenticar"
+}).constant("applicationConst",{
+  "storageUser": "_OAuthBRQ"
 });
+
+

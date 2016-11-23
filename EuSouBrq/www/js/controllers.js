@@ -41,21 +41,29 @@
     }
 
 
-    LoginController.$inject = [];
+    LoginController.$inject = ["usuarioService","$state","applicationConst"];
 
-    function LoginController() {
+    function LoginController(usuarioService, $state, applicationConst) {
         var vm = this;
-        
+
         vm.login = login;
         vm.rememberPass = rememberPass;
-        vm.dados = { };
+        vm.dados = {};
 
         function login() {
-            if(vm.formLogin.$valid)
-            {
-                navigator.notification.alert("Logado",function(){
+            if (vm.formLogin.$valid) {
 
-                });
+                usuarioService.autenticar(vm.dados.usuario, vm.dados.senha)
+                              .then(function(data){
+                                  
+                                  var valores = JSON.stringify(data.data);
+                                  window.localStorage.setItem(applicationConst.storageUser,valores);
+
+                                  $state.go("menu.home");
+                              })
+                              .catch(function(error){
+                                    navigator.notification.alert(error, function () { });
+                              });
             }
         }
 
