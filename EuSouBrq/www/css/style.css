@@ -30,3 +30,13 @@
     color:#fff;
     padding-top: 10%;
 }
+
+.valid-input
+{
+    border-top-color: #f00;
+    border-bottom-color: #f00;
+}
+.valid-input > i 
+{
+    color: #f00;
+}
