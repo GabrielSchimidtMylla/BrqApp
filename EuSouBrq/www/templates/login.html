@@ -15,10 +15,13 @@
                             <i class="icon ion-locked"></i>&nbsp;
                             <input type="password" name="senha" ng-model="vm.dados.senha" placeholder="Senha" required>
                         </label>                        
-                        <button type="submit" class="button button-block button-calm">Entrar</button>
+                        <button type="submit" class="button button-block button-calm">
+                            <ion-spinner ng-show="vm.loading" class="spinner-button" icon="ripple"></ion-spinner>
+                            <span ng-hide="vm.loading">Entrar</span>
+                        </button>
                     </form>
                     <div class="text-center">
-                        <a href="#" class="esqueci-senha">Esqueci minha senha...</a>
+                        <a ng-click="vm.rememberPass()" class="esqueci-senha">Esqueci minha senha...</a>
                     </div>
                 </div>
             </div>

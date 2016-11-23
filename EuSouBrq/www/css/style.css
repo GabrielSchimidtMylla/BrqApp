@@ -29,6 +29,7 @@
 {
     color:#fff;
     padding-top: 10%;
+    text-decoration: underline;
 }
 
 .valid-input
@@ -39,4 +40,14 @@
 .valid-input > i 
 {
     color: #f00;
+}
+
+.spinner-button 
+{
+    stroke: #fff;
+}
+
+.spinner-button > svg 
+{
+    margin-top: 9px;
 }
