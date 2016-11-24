@@ -56,18 +56,18 @@
 /*NOTE: MENU*/
 .menu-bg
 {
-    background-color: #3F4A59;
+    background-color: #0092b3;
 }
 
 .menu-bg .item, .menu-bg .item>a
 {
-    background-color: #3F4A59;
+    background-color: #0092b3;
     color:#fff;
     border-color: #fff;
 }
 .bar.bar-stable
 {
-    background-color: #3F4A59;
+    background-color: #0092b3;
 }
 
 .bar.bar-stable .button-icon.icon.ion-navicon
@@ -84,11 +84,11 @@
     border-color: #b2b2b2 !important;
     background-color: #f8f8f8 !important;
     background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%) !important;
-    color: #444 !important;
+    color: #0092b3 !important;
 }
 
 .nav-menu-bg .title{
-    color: #444 !important;
+    color: #0092b3 !important;
 }
 
 .button-orange
