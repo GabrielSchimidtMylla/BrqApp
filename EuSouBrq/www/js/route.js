@@ -10,9 +10,9 @@
     function configuration($stateProvider, $urlRouterProvider, $httpProvider, $ionicConfigProvider) {
 
         //Performace scroll
-        // if (!ionic.Platform.isIOS()) {
-        //     $ionicConfigProvider.scrolling.jsScrolling(false);
-        // }
+        if (!ionic.Platform.isIOS()) {
+            $ionicConfigProvider.scrolling.jsScrolling(false);
+        }
 
         $httpProvider.interceptors.push("validateUserSession");
 
