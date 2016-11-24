@@ -1,17 +1,16 @@
 <ion-view title="Notícia">
     <ion-nav-bar class="bar-stable">
         <ion-nav-buttons side="left">
-            <!--<button ng-click="$ionicGoBack()" class="button-clean back-button"><i class="ion-android-arrow-back"></i>Back</button>-->
             <a class="button icon-left ion-chevron-left button-clear button-orange" ng-click="$ionicGoBack()">Back</a>
         </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-content class="has-header animated fadeInLeft">
+    <ion-content class="has-header animated fadeIn">
         <div class="row">
             <div class="col-10 col-offset-50">
                 <ion-spinner ng-show="vm.loading" icon="ripple"></ion-spinner>
             </div>
         </div>
-        <div class="row" ng-hide="vm.loading">
+        <div class="row animated fadeIn" ng-hide="vm.loading">
             <div class="col">
                 <div class="row">
                     <div class="col-90 item item-avatar box-avatar-det">
