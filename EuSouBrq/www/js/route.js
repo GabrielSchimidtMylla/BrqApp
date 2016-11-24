@@ -5,9 +5,14 @@
     angular.module("brqApp")
         .config(configuration);
 
-    configuration.$inject = ["$stateProvider", "$urlRouterProvider", "$httpProvider"];
+    configuration.$inject = ["$stateProvider", "$urlRouterProvider", "$httpProvider", "$ionicConfigProvider"];
 
-    function configuration($stateProvider, $urlRouterProvider, $httpProvider) {
+    function configuration($stateProvider, $urlRouterProvider, $httpProvider, $ionicConfigProvider) {
+
+        //Performace scroll
+        // if (!ionic.Platform.isIOS()) {
+        //     $ionicConfigProvider.scrolling.jsScrolling(false);
+        // }
 
         $httpProvider.interceptors.push("validateUserSession");
 
@@ -25,8 +30,8 @@
             controllerAs: "vm"
         }).state("menu.home", {
             url: "/home",
-            views:{
-                'menuContent':{
+            views: {
+                'menuContent': {
                     templateUrl: "templates/home.html",
                     controller: "homeController",
                     controllerAs: "vm"
@@ -34,8 +39,8 @@
             }
         }).state("menu.ponto", {
             url: "/ponto",
-            views:{
-                'menuContent':{
+            views: {
+                'menuContent': {
                     templateUrl: "templates/ponto.html",
                     controller: "pontoController",
                     controllerAs: "vm"
