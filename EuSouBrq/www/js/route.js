@@ -5,9 +5,11 @@
     angular.module("brqApp")
         .config(configuration);
 
-    configuration.$inject = ["$stateProvider", "$urlRouterProvider"];
+    configuration.$inject = ["$stateProvider", "$urlRouterProvider", "$httpProvider"];
 
-    function configuration($stateProvider, $urlRouterProvider) {
+    function configuration($stateProvider, $urlRouterProvider, $httpProvider) {
+
+        $httpProvider.interceptors.push("validateUserSession");
 
         $urlRouterProvider.otherwise("/menu/home");
 
