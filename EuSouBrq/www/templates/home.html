@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <div class="list" ng-repeat="item in vm.dados track by $index">
+                <div class="list" ng-repeat="item in vm.dados track by $index" on-double-tap="vm.detalhe(item.id)">
                     <div class="card animated bounceInLeft">
                         <div class="item item-avatar">
                             <img ng-src="{{item.avatar}}">
@@ -21,8 +21,8 @@
                             <img class="full-image" ng-src="{{item.image}}">
                             <p>{{item.titulo}}</p>
                             <p>
-                                <a href="#" class="subdued">1 Gostei</a>
-                                <a href="#" class="subdued">5 Comentários</a>
+                                <a href="#" class="subdued">{{item.gostei}} Gostei</a>
+                                <a href="#" class="subdued">{{item.comentarios}} Comentários</a>
                             </p>
                         </div>
                     </div>

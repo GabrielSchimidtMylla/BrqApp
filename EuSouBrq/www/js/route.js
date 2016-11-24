@@ -46,6 +46,11 @@
                     controllerAs: "vm"
                 }
             }
+        }).state("detalheNoticia", {
+            url: "/detalheNoticia/:id",
+            templateUrl: "templates/detalheNoticia.html",
+            controller: "detalheNoticiaController",
+            controllerAs: "vm"
         });
     }
 })();

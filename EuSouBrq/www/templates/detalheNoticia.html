@@ -1,0 +1,50 @@
+<ion-view title="Notícia">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-buttons side="left">
+            <!--<button ng-click="$ionicGoBack()" class="button-clean back-button"><i class="ion-android-arrow-back"></i>Back</button>-->
+            <a class="button icon-left ion-chevron-left button-clear button-orange" ng-click="$ionicGoBack()">Back</a>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="has-header animated fadeInLeft">
+        <div class="row">
+            <div class="col-10 col-offset-50">
+                <ion-spinner ng-show="vm.loading" icon="ripple"></ion-spinner>
+            </div>
+        </div>
+        <div class="row" ng-hide="vm.loading">
+            <div class="col">
+                <div class="row">
+                    <div class="col-90 item item-avatar box-avatar-det">
+                        <img ng-src="{{vm.dado.avatar}}">
+                        <h2>{{vm.dado.autor}}</h2>
+                    </div>
+                    <div class="col-10 text-right">
+                        <i class="icon button-gostei" ng-class="vm.gostei ? 'ion-ios-heart' : 'ion-ios-heart-outline'" ng-click="vm.gostei=(!vm.gostei)"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img class="img-noticia" ng-src="{{vm.dado.image}}">
+                        <p>
+                            <strong>Publicado em:</strong> <span>{{vm.dado.data}}</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>{{vm.dado.titulo}}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>{{vm.dado.texto}}</p>
+                        <p>
+                                <a href="#" class="subdued">{{vm.dado.gostei}} Gostei</a>
+                                <a href="#" class="subdued">{{vm.dado.comentarios}} Comentários</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     "use strict";
 
@@ -6,7 +6,8 @@
         .controller("loginController", LoginController)
         .controller("menuController", MenuController)
         .controller("homeController", HomeController)
-        .controller("pontoController", PontoController);
+        .controller("pontoController", PontoController)
+        .controller("detalheNoticiaController", DetalheNoticiaController);
 
     MenuController.$inject = ["$ionicPopup", "$state", "$ionicLoading", "usuarioService"];
 
@@ -16,7 +17,7 @@
 
         function sair() {
 
-            navigator.notification.confirm("Deseja mesmo sair do aplicativo?", function(result) {
+            navigator.notification.confirm("Deseja mesmo sair do aplicativo?", function (result) {
                 if (result === 1) {
                     usuarioService.sair();
                     $state.go("login");
@@ -41,12 +42,12 @@
             if (vm.formLogin.$valid) {
                 vm.loading = true;
                 usuarioService.autenticar(vm.dados.usuario, vm.dados.senha)
-                    .then(function(data) {
+                    .then(function (data) {
                         if (data)
                             $state.go("menu.home");
-                    }).catch(function(error) {
-                        navigator.notification.alert(error, function() { });
-                    }).finally(function() {
+                    }).catch(function (error) {
+                        navigator.notification.alert(error, function () { });
+                    }).finally(function () {
                         vm.loading = false;
                     });
             }
@@ -64,8 +65,8 @@
                     {
                         text: '<b>Confirmar</b>',
                         type: 'button-positive',
-                        onTap: function(e) {
-                            navigator.notification.alert("Verifique seu e-mail!", function() { });
+                        onTap: function (e) {
+                            navigator.notification.alert("Verifique seu e-mail!", function () { });
                         }
                     }
                 ]
@@ -78,17 +79,22 @@
     function HomeController(publicacaoService, $state) {
         var vm = this;
         vm.loading = true;
+        vm.detalhe = detalhe;
         vm.dados = [];
 
         publicacaoService.listar()
-            .then(function(data) {
+            .then(function (data) {
                 vm.dados = data.data;
-            }).catch(function(error) {
+            }).catch(function (error) {
                 console.log(error);
-                navigator.notification.alert("Falha ao sincronizar! Verifique sua conexão com a internet.", function() { });
-            }).finally(function() {
+                navigator.notification.alert("Falha ao sincronizar! Verifique sua conexão com a internet.", function () { });
+            }).finally(function () {
                 vm.loading = false;
             });
+
+        function detalhe(id) {
+            $state.go("detalheNoticia", { id: id });
+        }
     }
 
     PontoController.$inject = [];
@@ -96,5 +102,43 @@
     function PontoController() {
         var vm = this;
     }
+
+    DetalheNoticiaController.$index = ["$state", "$stateParams", "publicacaoService"];
+
+    function DetalheNoticiaController($state, $stateParams, publicacaoService) {
+
+        var vm = this;
+        vm.loading = true;
+        vm.gostei = false;
+        vm.dado = {};
+        vm.options = {
+            loop: false,
+            effect: 'fade',
+            speed: 500,
+        }
+
+        publicacaoService.listar()
+            .then(function (data) {
+
+                if (data.data != null && data.data.length > 0) {
+                    vm.dado = data.data.filter(function (item) {
+                        return item.id == $stateParams.id;
+                    })[0];
+
+                    if (vm.dado == null)
+                        $state.go("menu.home");
+                }
+                else {
+                    $state.go("menu.home");
+                }
+
+            }).catch(function (error) {
+                console.log(error);
+                navigator.notification.alert("Falha ao sincronizar! Verifique sua conexão com a internet.", function () { });
+            }).finally(function () {
+                vm.loading = false;
+            });
+    }
+
 
 })();

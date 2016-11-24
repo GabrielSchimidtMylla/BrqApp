@@ -90,3 +90,47 @@
 .nav-menu-bg .title{
     color: #444 !important;
 }
+
+.button-orange
+{
+    color: #ffa500 !important;
+}
+h2
+{
+    line-height: 1.5 !important;
+}
+
+/*NOTE: DETALHES*/
+.img-avatar
+{
+    border-radius: 50%;
+    max-width: 50px;
+}
+
+.img-noticia 
+{
+    width: 100%;
+}
+
+.avatar-name
+{
+    position: relative;
+    display: inline-block;
+    top: -21px;
+    margin-left: 10px;
+}
+
+.box-avatar-det
+{
+    border: none;
+}
+
+.button-gostei
+{
+    margin-top: 95%;
+    margin-right: 8px;
+    display: inline-block;
+    font-size: 22px;
+    color:#ff6eb4;;
+}
+
