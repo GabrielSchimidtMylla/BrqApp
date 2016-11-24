@@ -10,14 +10,23 @@
         </header>
         <ion-content class="has-header menu-bg">
             <ion-list>
+                <ion-item class="text-center">
+                    <img class="avatar-usuario" src="http://filmesparecidos.com/static/images/character/1/74-marty-martin-seamus-mcfly.jpg">
+                    <br />
+                    <br />
+                    <span>Teste da Silva</span>
+                </ion-item>
                 <ion-item menu-close href="#/menu/home">
-                    BRQ Notícias
+                    <i class="icon ion-ios-paper-outline"></i>&nbsp;&nbsp; BRQ Notícias
                 </ion-item>
                 <ion-item menu-close href="#/menu/ponto">
-                    Ponto Eletronico
+                    <i class="icon ion-clock"></i>&nbsp;&nbsp;Ponto Eletronico
+                </ion-item>
+                <ion-item menu-close href="#/menu/meusDados">
+                    <i class="icon ion-person"></i>&nbsp;&nbsp;Meus Dados
                 </ion-item>
                 <ion-item menu-close ng-click="vm.sair()">
-                    Sair
+                    <i class="icon ion-log-out"></i>&nbsp;&nbsp;Sair
                 </ion-item>
             </ion-list>
         </ion-content>

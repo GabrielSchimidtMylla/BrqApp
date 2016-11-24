@@ -7,7 +7,8 @@
         .controller("menuController", MenuController)
         .controller("homeController", HomeController)
         .controller("pontoController", PontoController)
-        .controller("detalheNoticiaController", DetalheNoticiaController);
+        .controller("detalheNoticiaController", DetalheNoticiaController)
+        .controller("meusDadosController", MeusDadosController);
 
     MenuController.$inject = ["$ionicPopup", "$state", "$ionicLoading", "usuarioService"];
 
@@ -138,6 +139,13 @@
             }).finally(function () {
                 vm.loading = false;
             });
+    }
+
+    MeusDadosController.$inject = [];
+
+    function MeusDadosController()
+    {
+
     }
 
 

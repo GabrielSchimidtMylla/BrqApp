@@ -46,6 +46,15 @@
                     controllerAs: "vm"
                 }
             }
+        }).state("menu.meusDados", {
+            url: "/meusDados",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/meusDados.html",
+                    controller: "meusDadosController",
+                    controllerAs: "vm"
+                }
+            }
         }).state("detalheNoticia", {
             url: "/detalheNoticia/:id",
             templateUrl: "templates/detalheNoticia.html",
