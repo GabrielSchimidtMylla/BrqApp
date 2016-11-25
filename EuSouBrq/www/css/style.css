@@ -142,3 +142,22 @@ h2
     color:#ff6eb4;;
 }
 
+/*NOTE: MEUS DADOS*/
+.tabs-icon-top>.view-container.tab-content
+{
+    overflow-y: scroll;
+}
+
+.desc-dados-pessoais
+{
+    color: #aaa;
+    font-size: 14px;
+}
+
+.dados-pessoais
+{
+    float: right;
+    color: #255083;
+    font-size: 14px;
+    font-weight: bold;
+}
